@@ -1,0 +1,60 @@
+<div class="chat-header">
+    <div class="left-header">
+      <div class="header-title">
+        hogefuga
+      </div>
+    </div>
+    <div class="right-header">
+      <div class="header-button">
+        <a herf="#">チャットを終了する</a>
+      </div>
+    </div>
+</div>
+
+<div class="messages">
+  <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        Tom
+      </div>
+      <div class="message-date">
+        2020/3/31(Wed) 12:43:30
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        おはよう
+      </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        Tom
+      </div>
+      <div class="message-date">
+        2020/3/31(Wed) 12:47:30
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        こんばんは
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form">
+  <div class="form-input">
+    <input class="form-message" type="text" placeholder="type a message">
+    <label class="form-image">
+    <%# label要素内の２つの要素が存在する %>
+      <span class="image-file">画像</span>
+      <%# ↑「画像」ボタンをプラウザ上に強調表示させる要素 %>
+      <input type="file" class="hidden">
+      <%# 画像ボタンが押された時にinput type="file"要素も同時にクリックされる %>
+    </label>
+  </div>
+    <input class="form-submit" type="submit" value="送信">
+</div>
