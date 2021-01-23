@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+}
+
+.side {
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+}
+
+.side-top {
+  height: 100px;
+  padding: 0 20px;
+  /* 親要素divと同じ色なら指定する必要なし */
+  /* background-color: #253141; */
+}
+
+.side-center {
+  height: calc(100vh - 100px);
+  background-color: #2F3E51;
+  padding: 0 20px;
+}
+
+.main {
+  width: calc(100vw - 300px);
+  background-color: #ffffff;
+}
+
+.main-top {
+  height: 100px;
+  background-color: #FFFFFF;
+  padding: 0 40px;
+}
+
+.main-center {
+/* calcの算出時は合算して表示せずに要素毎に指定して計算する */
+/* 合算すると他に見た人が理解出来ないため */
+  height: calc(100vh - 100px - 90px);
+  background-color: #FAFAFA;
+  padding: 46px 40px 0;
+}
+
+.main-bottom {
+  height: 90px;
+  background-color: #DDDDDD;
+  padding: 20px 40px;
+}
