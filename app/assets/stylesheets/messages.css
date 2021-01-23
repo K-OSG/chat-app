@@ -1,47 +1,71 @@
 .wrapper {
   display: flex;
 }
-
-.side {
+.side-bar {
   background-color: #253141;
   width: 300px;
   height: 100vh;
 }
 
-.side-top {
+.side-bar-header {
   height: 100px;
   padding: 0 20px;
-  /* 親要素divと同じ色なら指定する必要なし */
-  /* background-color: #253141; */
+  background-color: #253141;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.side-center {
-  height: calc(100vh - 100px);
+.header-name a{
+  font-size: 16px;
+  color: #FAFAFA;
+  /* リンク先の＿を消すセレクタ */
+  text-decoration: none;
+}
+
+/* クラス名＋クラス内子要素を指定するとクラス内全てに適用する */
+.create-room a {
+  font-size: 10px;
+  border: 1px solid lightblue;
+  padding: 14px;
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+.rooms {
   background-color: #2F3E51;
+  height: calc(100vh - 100px);
   padding: 0 20px;
 }
 
-.main {
-  width: calc(100vw - 300px);
-  background-color: #ffffff;
+.room {
+  /* ルームが増えて画面からはみ出した時にスクロールするセレクタ */
+  overflow: scroll;
 }
 
-.main-top {
-  height: 100px;
+.room-name {
+  color: white;
+  padding: 20px 20px 40px;
+}
+
+.chat {
   background-color: #FFFFFF;
+  width: calc(100vw - 300px);
+}
+
+.chat-header {
+  height: 100px;
   padding: 0 40px;
 }
 
-.main-center {
-/* calcの算出時は合算して表示せずに要素毎に指定して計算する */
-/* 合算すると他に見た人が理解出来ないため */
-  height: calc(100vh - 100px - 90px);
+.messages {
   background-color: #FAFAFA;
+  height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
 }
 
-.main-bottom {
-  height: 90px;
+.form {
   background-color: #DDDDDD;
+  height: 90px;
   padding: 20px 40px;
 }
