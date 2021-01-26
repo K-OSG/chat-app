@@ -4,6 +4,9 @@ class MessagesController < ApplicationController
     # メッセージにはルームidが親関係として必要となるためfindメソッドにてroomモデルから取得
     # この時paramsは配列の値をハッシュ形式で保存しているためキーの指定は配列となる
     @room = Room.find(params[:room_id])
+    @messages = @room.messages.includes(:user)
+    # @room.messagesはチャットルームに紐づいている全てのメッセージ(=messagesテーブル全データ)
+    # userモデルからの情報はN＋1対策でinclude(:対策モデル)
   end
 
   def create
@@ -18,6 +21,7 @@ class MessagesController < ApplicationController
       # に再度リクエストして新たにインスタンス変数を生成する
       redirect_to room_messages_path(@room)
     else
+      @messages = @room.messages.includes(:user)
       render :index
     end
   end
