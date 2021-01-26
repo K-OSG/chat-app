@@ -45,16 +45,27 @@
   </div>
 </div>
 
-<div class="form">
+<%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+  <div class="form-input">
+    <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
+
+<%# <div class="form">
   <div class="form-input">
     <input class="form-message" type="text" placeholder="type a message">
     <label class="form-image">
     <%# label要素内の２つの要素が存在する %>
-      <span class="image-file">画像</span>
+      <%# <span class="image-file">画像</span> %>
       <%# ↑「画像」ボタンをプラウザ上に強調表示させる要素 %>
-      <input type="file" class="hidden">
+      <%# <input type="file" class="hidden"> %>
       <%# 画像ボタンが押された時にinput type="file"要素も同時にクリックされる %>
-    </label>
+    <%# </label>
   </div>
-    <input class="form-submit" type="submit" value="送信">
-</div>
+    <input class="form-submit" type="submit" value="送信"> %>
+<%# </div> %>
