@@ -14,5 +14,8 @@
       <!-- 投稿したメッセージ内容を記述する -->
       <%= message.content %>
     </div>
+    <%# attached?は画像添付の確認メソッド。画像ありでtrue、なしでfalseを返す
+    trueを返すとif文が働いてimage_tagで画像が表示される %>
+    <%= image_tag message.image.variant(resize: '50x50'), class: 'message-image' if message.image.attached? %>
   </div>
 </div>
