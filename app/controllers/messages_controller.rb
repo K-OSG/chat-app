@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
   def message_params
     # messageモデルに対してcurrent_user.idを紐付けしたcontentのみ保存を許可する
     # mergeはparamaにおいては紐付けの意味をはたす
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
     # .permit(保存値(カラム名)).merge(保存先カラム(キー): 紐付けするデータ)
     # user_id:(保存先カラム)としてcurrent_user.idの値を紐付けられたcontentのみ保存を許可
   end
