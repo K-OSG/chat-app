@@ -1,12 +1,14 @@
 <div class="chat-header">
     <div class="left-header">
       <div class="header-title">
-        <%= @room.name%>
+        <%= @room.name %>
       </div>
     </div>
     <div class="right-header">
       <div class="header-button">
-        <a herf="#">チャットを終了する</a>
+        <%# room_pathに@変数を引数にすることで削除するroomを判別させる %>
+        <%# @roomはmessages_controllerにてメッセージ一覧表示時に定義した変数 %>
+         <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
       </div>
     </div>
 </div>
