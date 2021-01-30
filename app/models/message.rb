@@ -5,6 +5,7 @@ class Message < ApplicationRecord
   validates :content, presence: true, unless: :was_attached?
   # unlessオプションで:「was_attached?メソッド」の返り値がfalseなら
   # バリデーションによる検証を行う = trueならバリデーションの検証なし
+  # belongs_toは外部キーに対してはデフォルトで空の検証バリデーションが働いている
 
   # メソッドは同じクラス内にselfで定義
   def was_attached?
